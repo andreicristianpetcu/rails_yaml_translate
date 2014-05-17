@@ -1,0 +1,78 @@
+---
+sk:
+  views:
+    pagination:
+      first: First page
+      last: Last Page
+      previous: <i class="icon-angle-left"></i>
+      next: <i class="icon-angle-right"></i>
+      truncate: "..."
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: No entry_name% {}
+          one: "% {1} entry_name"
+          other: Showing all% {count}
+      more_pages:
+        display_entries: Showed% {first} - {last}% of total% {total}
+  search:
+    sort:
+      common:
+        score: Relevance
+        created_at: Date Added document
+        updated_at: Date updated document
+        judges_count: Number of judges
+        hearings_count: Hearing loss
+        decrees_count: Number of decisions
+      court:
+        score: Relevance
+        created_at: Date Added document
+        updated_at: Date updated document
+        judges_count: Number of judges
+        hearings_count: Hearing loss
+        decrees_count: Number of decisions
+      judge:
+        score: Relevance
+        created_at: Date Added document
+        updated_at: Date updated document
+        judges_count: Number of judges
+        hearings_count: Hearing loss
+        decrees_count: Number of decisions
+      hearing:
+        score: Relevance
+        created_at: Date Added document
+        updated_at: Date updated document
+        judges_count: Number of judges
+        hearings_count: Hearing loss
+        decrees_count: Number of decisions
+        date: Date of hearing
+      decree:
+        score: Relevance
+        created_at: Date Added document
+        updated_at: Date updated document
+        judges_count: Number of judges
+        hearings_count: Hearing loss
+        decrees_count: Number of decisions
+        date: Date of decision
+        pages_count: Count decision
+      proceeding:
+        score: Relevance
+        created_at: Date Added document
+        updated_at: Date updated document
+        judges_count: Number of judges
+        hearings_count: Hearing loss
+        decrees_count: Number of decisions
+  static_pages:
+    about: About the project
+    faq: Frequently Asked Questions
+    code: Source Code
+    contact: Contact
+    terms_of_use: Podmiensky use
+    privacy: Privacy Policy
+    copyright: Copyright
+    feedback: Did you find an error?
+    security: Security
+    how_it_works: How does it work?
+    data_history: History Data
+    api: API
