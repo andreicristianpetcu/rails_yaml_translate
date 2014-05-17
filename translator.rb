@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 require 'yaml'
+require 'easy_translate'
+
+APP_CFG = YAML.load_file('config.yaml')
+EasyTranslate.api_key = APP_CFG['google_translate_key']
 
 def traverse_tree(object)
   object.each do |key, value|
@@ -8,6 +12,7 @@ def traverse_tree(object)
       traverse_tree(value)
     else
       puts "#{key}-----#{value}\n"
+      puts 
     end
   end
 end
