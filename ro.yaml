@@ -1,0 +1,78 @@
+---
+sk:
+  views:
+    pagination:
+      first: Prima pagină
+      last: Ultima pagina
+      previous: <i class="icon-angle-left"></i>
+      next: <i class="icon-angle-right"></i>
+      truncate: "..."
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: Nu entry_name% {}
+          one: "% {1} entry_name"
+          other: Arata toate% {count}
+      more_pages:
+        display_entries: Arătat% {primul} - {ultimul}% din total% {total de}
+  search:
+    sort:
+      common:
+        score: Relevanță
+        created_at: Document Data adaugarii
+        updated_at: Document Data actualizarii
+        judges_count: Număr de judecători
+        hearings_count: Pierderea auzului
+        decrees_count: Număr de decizii
+      court:
+        score: Relevanță
+        created_at: Document Data adaugarii
+        updated_at: Document Data actualizarii
+        judges_count: Număr de judecători
+        hearings_count: Pierderea auzului
+        decrees_count: Număr de decizii
+      judge:
+        score: Relevanță
+        created_at: Document Data adaugarii
+        updated_at: Document Data actualizarii
+        judges_count: Număr de judecători
+        hearings_count: Pierderea auzului
+        decrees_count: Număr de decizii
+      hearing:
+        score: Relevanță
+        created_at: Document Data adaugarii
+        updated_at: Document Data actualizarii
+        judges_count: Număr de judecători
+        hearings_count: Pierderea auzului
+        decrees_count: Număr de decizii
+        date: Data de auz
+      decree:
+        score: Relevanță
+        created_at: Document Data adaugarii
+        updated_at: Document Data actualizarii
+        judges_count: Număr de judecători
+        hearings_count: Pierderea auzului
+        decrees_count: Număr de decizii
+        date: Data deciziei
+        pages_count: Contele decizie
+      proceeding:
+        score: Relevanță
+        created_at: Document Data adaugarii
+        updated_at: Document Data actualizarii
+        judges_count: Număr de judecători
+        hearings_count: Pierderea auzului
+        decrees_count: Număr de decizii
+  static_pages:
+    about: Despre proiect
+    faq: "Întrebări frecvente"
+    code: Source Code
+    contact: Contact
+    terms_of_use: Utilizare Podmiensky
+    privacy: Politica de confidențialitate
+    copyright: Drepturi de autor
+    feedback: Ai găsit o eroare?
+    security: Securitate
+    how_it_works: Cum functioneaza?
+    data_history: Istorie de date
+    api: API

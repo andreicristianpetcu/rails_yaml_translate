@@ -7,8 +7,9 @@ APP_CFG = YAML.load_file('config.yaml')
 EasyTranslate.api_key = APP_CFG['google_translate_key']
 
 def translate(text_to_translate)
-  translated = EasyTranslate.translate(text_to_translate, :from => :sk, :to => :en)
-  # translated = text_to_translate + 'translated'
+  # translated = EasyTranslate.translate(text_to_translate, :from => :sk, :to => :ro)
+  translated = text_to_translate + 'translated'
+  sleep(1.0/100.0)
   translated
 end
 
@@ -29,4 +30,4 @@ end
 translate_yaml = YAML.load_file('sk.yml')
 traverse_tree(translate_yaml)
 puts translate_yaml.to_yaml
-File.open('en.yaml', 'w') {|f| f.write translate_yaml.to_yaml }
+File.open('ro.yaml', 'w') {|f| f.write translate_yaml.to_yaml }
