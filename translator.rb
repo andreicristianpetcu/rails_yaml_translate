@@ -27,24 +27,27 @@ def traverse_tree(object, lang)
   object
 end
 
-def translate_file(file)
+def translate_file(file, folder)
   translate_yaml = YAML.load_file(file)
   en = traverse_tree(translate_yaml, :en)
-  File.open('ro.yaml', 'w') {|f| f.write en.to_yaml }
-  puts en.to_yaml
+  File.open(folder + 'en.yml', 'w') {|f| f.write en.to_yaml; puts f.path }
+  # puts en.to_yaml
 
   translate_yaml = YAML.load_file(file)
   ro = traverse_tree(translate_yaml, :ro)
-  File.open('en.yaml', 'w') {|f| f.write ro.to_yaml }
+  File.open(folder + 'ro.yml', 'w') {|f| f.write ro.to_yaml; puts f.path }
 end
 
 def find_files(base_path, flang)
   Dir.glob(base_path + "**/" + flang + ".yml") do |file|
     if !File.directory? file
-      puts file
+      # puts file
+      translate_file(flang + ".yml", base_path)
+    else
+      find_files(file, flang)
     end
   end
 end
 
 find_files("../otvorenesudy/config/locales/", "sk")
-# translate_file('sk.yml')
+# translate_file('sk.yml', '../otvorenesudy/config/locales/')
