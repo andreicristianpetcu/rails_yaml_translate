@@ -10,7 +10,7 @@ def translate(text_to_translate, lang)
   if not text_to_translate.nil? then
     # translated = EasyTranslate.translate(text_to_translate, :from => :sk, :to => lang)
     translated = text_to_translate + ' translated ' + lang.to_s
-    # sleep(1.0/100.0)
+    sleep(1.0/100.0)
   end
   translated
 end
