@@ -9,8 +9,6 @@ EasyTranslate.api_key = APP_CFG['google_translate_key']
 def translate(text_to_translate, lang)
   if not text_to_translate.nil? then
     # translated = EasyTranslate.translate(text_to_translate, :from => :sk, :to => lang)
-    puts "text_to_translate " + text_to_translate
-    puts "lang.to_s " + lang.to_s
     translated = text_to_translate + ' translated ' + lang.to_s
     # sleep(1.0/100.0)
   end
@@ -23,7 +21,6 @@ def traverse_tree(object, lang)
       value = traverse_tree(value, lang)
       object[key] = value
     else
-      puts "#{key}-----#{value}\n"
       translated = translate(value, lang)
       object[key] = translated
     end
@@ -35,21 +32,16 @@ def translate_file(file)
   folder = File.dirname(file)
   translate_yaml = YAML.load_file(file)
   en = traverse_tree(translate_yaml, :en)
-  File.open(folder + 'en.yml', 'w') {|f| f.write en.to_yaml}
-  # ; puts f.path }
-  # puts folder
-  puts "translating " + file
+  File.open(folder + '/en.yml', 'w') {|f| f.write en.to_yaml}
 
   translate_yaml = YAML.load_file(file)
   ro = traverse_tree(translate_yaml, :ro)
-  File.open(folder + 'ro.yml', 'w') {|f| f.write ro.to_yaml}
-  # ; puts f.path }
+  File.open(folder + '/ro.yml', 'w') {|f| f.write ro.to_yaml}
 end
 
 def find_files(base_path, flang)
   Dir.glob(base_path + "**/" + flang + ".yml") do |file|
     if !File.directory? file
-      # puts file
       translate_file(file)
     else
       find_files(file, flang)
